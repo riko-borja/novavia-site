@@ -2,7 +2,7 @@
   <main class="home">
     <section class="hero">
       <div class="container hero-grid">
-        <div class="hero-copy">
+        <div class="hero-copy glow">
           <p class="pill">Modern products. Clean execution.</p>
           <h1>Build faster with a brand that feels future-ready.</h1>
           <p class="subhead">
@@ -107,7 +107,18 @@
 }
 
 .hero {
-  padding: 72px 0 40px;
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 60px;
+  }
+}
+
+.hero h1 {
+  max-width: 650px;
 }
 
 .hero-grid {
@@ -170,6 +181,7 @@ h1 {
   text-decoration: none;
   font-weight: 600;
   border: 1px solid rgba(255, 255, 255, 0.16);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
 .primary {
@@ -185,6 +197,14 @@ h1 {
 .primary:hover,
 .secondary:hover {
   transform: translateY(-1px);
+}
+
+.primary:hover {
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.35), 0 0 18px rgba(0, 209, 255, 0.16);
+}
+
+.secondary:hover {
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.25);
 }
 
 .micro {
@@ -368,4 +388,43 @@ h2 {
     align-items: flex-start;
   }
 }
+
+.hero-copy {
+  position: relative;
+}
+
+.hero-copy.glow::before {
+  content: "";
+  position: absolute;
+  inset: -40px -30px -40px -30px;
+  background:
+    radial-gradient(600px 300px at 20% 20%, rgba(124, 92, 255, 0.35), transparent 60%),
+    radial-gradient(500px 260px at 60% 10%, rgba(0, 209, 255, 0.25), transparent 55%),
+    radial-gradient(520px 320px at 40% 70%, rgba(124, 92, 255, 0.18), transparent 60%);
+  filter: blur(18px);
+  opacity: 1.0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Card hover lift + glow (micro + features + tiles) */
+.micro-item,
+.feature,
+.tile {
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  will-change: transform;
+}
+
+.micro-item:hover,
+.feature:hover,
+.tile:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 14px 34px rgba(0, 0, 0, 0.35),
+    0 0 18px rgba(124, 92, 255, 0.14);
+}
+
+
+
 </style>
