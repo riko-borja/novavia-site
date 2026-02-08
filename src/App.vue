@@ -17,10 +17,13 @@
     </header>
 
     <RouterView />
+    <Footer></Footer>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+  import Footer from "./components/Footer.vue";
+</script>
 
 <style>
 :root {
@@ -64,7 +67,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 64px;
+  height: 72px;
 }
 
 .brand {
@@ -95,6 +98,7 @@ a {
   color: var(--muted);
   padding: 8px 10px;
   border-radius: 10px;
+  position: relative;
 }
 
 .nav a:hover {
@@ -102,13 +106,17 @@ a {
   background: rgba(255, 255, 255, 0.06);
 }
 
-.nav a.router-link-active {
+/* Active (exact) link — nice “glow pill” */
+.nav a.router-link-exact-active {
   color: var(--text);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
-.nav .cta {
-  color: var(--text);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: linear-gradient(135deg, rgba(124, 92, 255, 0.25), rgba(0, 209, 255, 0.18));
+/* Contact CTA keeps button look even when active */
+.nav .cta.router-link-exact-active {
+  background: linear-gradient(135deg, rgba(124, 92, 255, 0.45), rgba(0, 209, 255, 0.28));
+  border: 1px solid rgba(255, 255, 255, 0.22);
 }
+
 </style>
