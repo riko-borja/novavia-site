@@ -2,12 +2,10 @@
   <main class="page">
     <section class="hero">
       <div class="container">
-        <h1>Products</h1>
-        <p class="subhead">
-          A small suite of focused products that help teams move faster—from
-          concept to launch.
-        </p>
-
+        <PageHeader
+        title="Products"
+        subtitle="A small suite of focused products that help teams move faster—from concept to launch."
+        />
         <div class="grid">
           <article class="card">
             <h3>Novavia Core</h3>
@@ -60,6 +58,10 @@
     </section>
   </main>
 </template>
+
+<script setup>
+import PageHeader from "../components/PageHeader.vue";
+</script>
 
 <style scoped>
 .page { padding: 70px 0 90px; }

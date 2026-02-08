@@ -1,11 +1,10 @@
 <template>
   <main class="page">
     <div class="container">
-      <h1>About</h1>
-      <p class="subhead">
-        Novavia is built around a simple idea: clean systems ship faster than complicated ones.
-      </p>
-
+    <PageHeader
+    title="About"
+    subtitle="Novavia is built around a simple idea: clean systems ship faster than complicated ones."
+    />
       <div class="two">
         <section class="card">
           <h3>What we believe</h3>
@@ -30,7 +29,9 @@
     </div>
   </main>
 </template>
-
+<script setup>
+import PageHeader from "../components/PageHeader.vue";
+</script>
 <style scoped>
 .page { padding: 70px 0 90px; }
 .container { max-width: 1100px; margin: 0 auto; padding: 0 18px; }

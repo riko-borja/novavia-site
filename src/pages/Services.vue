@@ -1,11 +1,10 @@
 <template>
   <main class="page">
     <div class="container">
-      <h1>Services</h1>
-      <p class="subhead">
-        We help teams design, build, and ship clean web experiences—fast.
-      </p>
-
+    <PageHeader
+    title="Services"
+    subtitle="We help teams design, build, and ship clean web experiences—fast."
+    />
       <div class="grid">
         <article class="card">
           <h3>Landing pages</h3>
@@ -31,6 +30,10 @@
     </div>
   </main>
 </template>
+
+<script setup>
+import PageHeader from "../components/PageHeader.vue";
+</script>
 
 <style scoped>
 .page { padding: 70px 0 90px; }

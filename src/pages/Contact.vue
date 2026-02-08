@@ -1,10 +1,10 @@
 <template>
   <main class="page">
     <div class="container">
-      <h1>Contact</h1>
-      <p class="subhead">
-        For now this is a placeholder. Later we can connect a form handler or your email.
-      </p>
+    <PageHeader
+    title="Contact"
+    subtitle="For now this is a placeholder. Later we can connect a form handler or your email."
+    />
 
       <div class="card">
         <div class="row">
@@ -51,6 +51,7 @@
 </template>
 
 <script setup>
+import PageHeader from "../components/PageHeader.vue";
 import { ref } from "vue";
 
 const name = ref("");
